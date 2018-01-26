@@ -5,6 +5,10 @@
 /lib
 /utils
 
+jars/usercache.json
+jars/saves
+jars/Dabois/Modules/
+
 .metadata
 
 *.class
