@@ -1,0 +1,65 @@
+---- Minecraft Crash Report ----
+// Ooh. Shiny.
+
+Time: 1/21/18 6:19 PM
+Description: Initializing game
+
+java.lang.Error: Unresolved compilation problems: 
+	The import com.mojang.realmsclient cannot be resolved
+	ChatFormatting cannot be resolved to a variable
+	ChatFormatting cannot be resolved to a variable
+
+	at me.freakjoost.Dabois.module.render.hud.components.TabGUI.<init>(TabGUI.java:3)
+	at me.freakjoost.Dabois.module.render.hud.HUD.<init>(HUD.java:26)
+	at me.freakjoost.Dabois.module.ModuleManager.loadMods(ModuleManager.java:27)
+	at me.freakjoost.Dabois.Dabois.onEnable(Dabois.java:52)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:617)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:462)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at me.freakjoost.Dabois.module.render.hud.components.TabGUI.<init>(TabGUI.java:3)
+	at me.freakjoost.Dabois.module.render.hud.HUD.<init>(HUD.java:26)
+	at me.freakjoost.Dabois.module.ModuleManager.loadMods(ModuleManager.java:27)
+	at me.freakjoost.Dabois.Dabois.onEnable(Dabois.java:52)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:617)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.run(Minecraft.java:462)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_161, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 841105064 bytes (802 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: mcp
+	LWJGL: 2.9.4
+	OpenGL: GeForce GTX 960M/PCIe/SSE2 GL version 4.5.0 NVIDIA 385.69, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: 8x Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz

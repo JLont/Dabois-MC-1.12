@@ -1,0 +1,50 @@
+15:30:17 - "scalac" is not found on the PATH.  Scala files will not be recompiled
+15:30:19 - FATAL ERROR
+Traceback (most recent call last):
+  File "runtime\decompile.py", line 63, in decompile
+    commands.checkupdates()
+  File "C:\Users\lontj\Desktop\FreakJoostClient\mcp\runtime\commands.py", line 1063, in checkupdates
+    md5_file = md5(fh.read()).hexdigest()
+IOError: [Errno 13] Permission denied
+15:30:37 - "scalac" is not found on the PATH.  Scala files will not be recompiled
+15:30:39 - FATAL ERROR
+Traceback (most recent call last):
+  File "runtime\decompile.py", line 63, in decompile
+    commands.checkupdates()
+  File "C:\Users\lontj\Desktop\FreakJoostClient\mcp\runtime\commands.py", line 1063, in checkupdates
+    md5_file = md5(fh.read()).hexdigest()
+IOError: [Errno 13] Permission denied
+15:30:51 - "scalac" is not found on the PATH.  Scala files will not be recompiled
+15:30:52 - FATAL ERROR
+Traceback (most recent call last):
+  File "runtime\decompile.py", line 63, in decompile
+    commands.checkupdates()
+  File "C:\Users\lontj\Desktop\FreakJoostClient\mcp\runtime\commands.py", line 1063, in checkupdates
+    md5_file = md5(fh.read()).hexdigest()
+IOError: [Errno 13] Permission denied
+15:31:17 - "scalac" is not found on the PATH.  Scala files will not be recompiled
+15:31:19 - FATAL ERROR
+Traceback (most recent call last):
+  File "runtime\decompile.py", line 63, in decompile
+    commands.checkupdates()
+  File "C:\Users\lontj\Desktop\FreakJoostClient\mcp\runtime\commands.py", line 1063, in checkupdates
+    md5_file = md5(fh.read()).hexdigest()
+IOError: [Errno 13] Permission denied
+15:32:19 - "scalac" is not found on the PATH.  Scala files will not be recompiled
+15:32:21 - FATAL ERROR
+Traceback (most recent call last):
+  File "runtime\decompile.py", line 63, in decompile
+    commands.checkupdates()
+  File "C:\Users\lontj\Desktop\FreakJoostClient\mcp\runtime\commands.py", line 1063, in checkupdates
+    md5_file = md5(fh.read()).hexdigest()
+IOError: [Errno 13] Permission denied
+15:34:59 - "scalac" is not found on the PATH.  Scala files will not be recompiled
+15:35:00 - FATAL ERROR
+Traceback (most recent call last):
+  File "runtime\decompile.py", line 63, in decompile
+    commands.checkupdates()
+  File "C:\Users\lontj\Desktop\FreakJoostClient\mcp\runtime\commands.py", line 1063, in checkupdates
+    md5_file = md5(fh.read()).hexdigest()
+IOError: [Errno 13] Permission denied
+15:36:11 - "scalac" is not found on the PATH.  Scala files will not be recompiled
+15:39:28 - !! Missing server jar file. Aborting !!

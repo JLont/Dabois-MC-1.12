@@ -1,0 +1,109 @@
+---- Minecraft Crash Report ----
+// Oh - I know what I did wrong!
+
+Time: 1/22/18 12:40 PM
+Description: Tesselating block model
+
+java.lang.NullPointerException: Tesselating block model
+	at net.minecraft.block.Block.shouldSideBeRendered(Block.java:513)
+	at net.minecraft.block.state.BlockStateContainer$StateImplementation.shouldSideBeRendered(BlockStateContainer.java:410)
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModelSmooth(BlockModelRenderer.java:67)
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:44)
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:35)
+	at net.minecraft.client.renderer.BlockRendererDispatcher.renderBlock(BlockRendererDispatcher.java:75)
+	at net.minecraft.client.renderer.chunk.RenderChunk.rebuildChunk(RenderChunk.java:198)
+	at net.minecraft.client.renderer.chunk.ChunkRenderWorker.processTask(ChunkRenderWorker.java:119)
+	at net.minecraft.client.renderer.chunk.ChunkRenderDispatcher.updateChunkNow(ChunkRenderDispatcher.java:163)
+	at net.minecraft.client.renderer.RenderGlobal.setupTerrain(RenderGlobal.java:996)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorldPass(EntityRenderer.java:1393)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1336)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1143)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1212)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:482)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at net.minecraft.block.Block.shouldSideBeRendered(Block.java:513)
+	at net.minecraft.block.state.BlockStateContainer$StateImplementation.shouldSideBeRendered(BlockStateContainer.java:410)
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModelSmooth(BlockModelRenderer.java:67)
+
+-- Block model being tesselated --
+Details:
+	Block: minecraft:dirt[snowy=false,variant=dirt]
+	Block location: World: (-144,64,-224), Chunk: (at 0,4,0 in -9,-14; contains blocks -144,0,-224 to -129,255,-209), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Using AO: true
+Stacktrace:
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:44)
+	at net.minecraft.client.renderer.BlockModelRenderer.renderModel(BlockModelRenderer.java:35)
+
+-- Block being tesselated --
+Details:
+	Block type: ID #3 (tile.dirt // net.minecraft.block.BlockDirt)
+	Block data value: 0 / 0x0 / 0b0000
+	Block location: World: (-144,64,-224), Chunk: (at 0,4,0 in -9,-14; contains blocks -144,0,-224 to -129,255,-209), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+Stacktrace:
+	at net.minecraft.client.renderer.BlockRendererDispatcher.renderBlock(BlockRendererDispatcher.java:75)
+	at net.minecraft.client.renderer.chunk.RenderChunk.rebuildChunk(RenderChunk.java:198)
+	at net.minecraft.client.renderer.chunk.ChunkRenderWorker.processTask(ChunkRenderWorker.java:119)
+	at net.minecraft.client.renderer.chunk.ChunkRenderDispatcher.updateChunkNow(ChunkRenderDispatcher.java:163)
+	at net.minecraft.client.renderer.RenderGlobal.setupTerrain(RenderGlobal.java:996)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorldPass(EntityRenderer.java:1393)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1336)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player150'/198, l='MpServer', x=-130.57, y=66.26, z=-217.81]]
+	Chunk stats: MultiplayerChunkCache: 131, 131
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-104,64,-64), Chunk: (at 8,4,0 in -7,-4; contains blocks -112,0,-64 to -97,255,-49), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 26994 game time, 26994 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 66 total; [EntityCreeper['Creeper'/258, l='MpServer', x=-137.50, y=16.00, z=-280.50], EntityChicken['Chicken'/131, l='MpServer', x=-94.77, y=64.00, z=-254.90], EntityCreeper['Creeper'/259, l='MpServer', x=-134.50, y=16.00, z=-279.50], EntityChicken['Chicken'/132, l='MpServer', x=-90.89, y=62.59, z=-232.57], EntityCreeper['Creeper'/260, l='MpServer', x=-131.50, y=34.00, z=-282.50], EntityChicken['Chicken'/261, l='MpServer', x=-136.17, y=64.00, z=-257.26], EntitySquid['Squid'/136, l='MpServer', x=-67.05, y=60.44, z=-208.26], EntitySkeleton['Skeleton'/265, l='MpServer', x=-122.50, y=15.00, z=-269.29], EntitySquid['Squid'/137, l='MpServer', x=-71.60, y=61.80, z=-222.83], EntityCreeper['Creeper'/266, l='MpServer', x=-124.50, y=15.00, z=-265.50], EntitySquid['Squid'/138, l='MpServer', x=-76.89, y=61.55, z=-208.74], EntityChicken['Chicken'/267, l='MpServer', x=-127.46, y=64.00, z=-268.20], EntitySquid['Squid'/139, l='MpServer', x=-77.72, y=61.40, z=-212.01], EntityChicken['Chicken'/268, l='MpServer', x=-126.79, y=64.00, z=-257.86], EntityPlayerSP['Player150'/198, l='MpServer', x=-130.57, y=66.26, z=-217.81], EntitySheep['Sheep'/286, l='MpServer', x=-89.19, y=63.00, z=-257.48], EntityChicken['Chicken'/52, l='MpServer', x=-184.93, y=65.00, z=-254.40], EntityChicken['Chicken'/53, l='MpServer', x=-186.36, y=64.00, z=-225.18], EntitySheep['Sheep'/54, l='MpServer', x=-191.73, y=67.00, z=-237.51], EntityItem['item.item.bone'/55, l='MpServer', x=-191.71, y=62.00, z=-201.86], EntitySkeleton['Skeleton'/58, l='MpServer', x=-163.50, y=13.00, z=-254.50], EntityZombie['Zombie'/59, l='MpServer', x=-163.50, y=13.00, z=-254.50], EntityZombie['Zombie'/60, l='MpServer', x=-165.50, y=35.00, z=-246.50], EntityZombie['Zombie'/61, l='MpServer', x=-172.50, y=17.00, z=-234.50], EntityWitch['Witch'/62, l='MpServer', x=-172.50, y=17.00, z=-234.50], EntityCreeper['Creeper'/63, l='MpServer', x=-169.50, y=35.00, z=-224.50], EntityBat['Bat'/64, l='MpServer', x=-174.32, y=57.46, z=-224.15], EntityBat['Bat'/65, l='MpServer', x=-173.38, y=57.04, z=-219.80], EntityWitch['Witch'/72, l='MpServer', x=-156.50, y=17.00, z=-253.32], EntityChicken['Chicken'/73, l='MpServer', x=-155.11, y=64.00, z=-231.40], EntityZombie['Zombie'/79, l='MpServer', x=-137.52, y=15.00, z=-246.20], EntityZombie['Zombie'/80, l='MpServer', x=-139.50, y=16.00, z=-244.50], EntityWitch['Witch'/81, l='MpServer', x=-140.30, y=17.00, z=-241.70], EntityZombie['Zombie'/82, l='MpServer', x=-140.48, y=16.00, z=-243.73], EntityItem['item.item.egg'/83, l='MpServer', x=-142.51, y=64.00, z=-253.77], EntitySkeleton['Skeleton'/84, l='MpServer', x=-132.13, y=49.00, z=-210.42], EntityZombie['Zombie'/85, l='MpServer', x=-130.81, y=45.00, z=-199.20], EntityZombie['Zombie'/86, l='MpServer', x=-129.25, y=44.00, z=-199.42], EntityChicken['Chicken'/87, l='MpServer', x=-143.58, y=66.00, z=-174.17], EntityItem['item.item.egg'/88, l='MpServer', x=-143.66, y=66.00, z=-174.17], EntityItem['item.item.egg'/102, l='MpServer', x=-116.20, y=64.00, z=-250.87], EntityItem['item.item.egg'/103, l='MpServer', x=-125.42, y=65.00, z=-237.09], EntityChicken['Chicken'/104, l='MpServer', x=-126.17, y=64.00, z=-216.29], EntityChicken['Chicken'/105, l='MpServer', x=-127.16, y=64.00, z=-219.29], EntityItem['item.item.egg'/106, l='MpServer', x=-122.16, y=64.00, z=-216.00], EntityZombie['Zombie'/107, l='MpServer', x=-123.28, y=21.00, z=-182.47], EntityChicken['Chicken'/108, l='MpServer', x=-127.51, y=64.00, z=-164.80], EntityItem['item.item.egg'/109, l='MpServer', x=-127.88, y=64.00, z=-164.98], EntityChicken['Chicken'/118, l='MpServer', x=-105.29, y=64.00, z=-250.15], EntityCreeper['Creeper'/246, l='MpServer', x=-165.14, y=13.07, z=-260.87], EntityItem['item.item.egg'/119, l='MpServer', x=-99.85, y=64.00, z=-240.31], EntityCreeper['Creeper'/247, l='MpServer', x=-161.50, y=35.00, z=-264.50], EntityItem['item.item.egg'/120, l='MpServer', x=-106.01, y=64.00, z=-252.49], EntityItem['item.item.egg'/248, l='MpServer', x=-161.10, y=65.00, z=-263.42], EntityChicken['Chicken'/121, l='MpServer', x=-102.86, y=64.00, z=-251.28], EntityZombie['Zombie'/249, l='MpServer', x=-157.50, y=13.00, z=-260.50], EntityChicken['Chicken'/122, l='MpServer', x=-108.23, y=64.00, z=-243.44], EntityZombie['Zombie'/250, l='MpServer', x=-149.54, y=13.00, z=-264.10], EntityChicken['Chicken'/123, l='MpServer', x=-107.20, y=64.00, z=-235.11], EntityZombie['Zombie'/251, l='MpServer', x=-149.50, y=21.00, z=-262.50], EntityChicken['Chicken'/124, l='MpServer', x=-100.72, y=64.00, z=-232.17], EntitySkeleton['Skeleton'/252, l='MpServer', x=-151.50, y=35.00, z=-261.50], EntityItem['item.item.egg'/125, l='MpServer', x=-106.50, y=64.00, z=-234.43], EntityChicken['Chicken'/253, l='MpServer', x=-154.82, y=68.00, z=-267.54], EntityItem['item.item.egg'/254, l='MpServer', x=-152.60, y=68.00, z=-269.07], EntityChicken['Chicken'/255, l='MpServer', x=-157.50, y=68.00, z=-269.24]]
+	Retry entities: 0 total; []
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:448)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:3008)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:503)
+	at net.minecraft.client.main.Main.main(Main.java:115)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_161, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 779171752 bytes (743 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: mcp
+	LWJGL: 2.9.4
+	OpenGL: GeForce GTX 960M/PCIe/SSE2 GL version 4.5.0 NVIDIA 385.69, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: 8x Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
